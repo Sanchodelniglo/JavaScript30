@@ -1,0 +1,18 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title JS Drum Kit
+    %link{:href => "style.css", :rel => "stylesheet"}
+  %body
+    .keys
+      - keys_n_sounds = { I: "hihat", U: "clap", O: "openhat", Z: "boom", Y: "ride", A: "snare", E: "tom", R: "tink" }
+      - keys_n_sounds.each do |key, sound|
+        .key{ data: { key: key.to_s.ord } }
+          %kbd= key
+          %span.sound= sound
+          %br
+          %audio{ src: "sounds/#{sound}.wav" }
+
+    :javascript
+      console.log('Pouet');

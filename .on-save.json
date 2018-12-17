@@ -1,0 +1,8 @@
+[
+  {
+    "srcDir": ".",
+    "destDir": ".",
+    "files": "**/*.haml",
+    "command": "haml '${srcFile}' | tidy -iq > '${destFileWithoutExtension}'"
+  }
+]
